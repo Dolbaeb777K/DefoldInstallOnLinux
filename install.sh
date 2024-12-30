@@ -32,7 +32,7 @@ fi
 	printf "\n$(tput setaf 2)[ Starting installation ]$(tput sgr0) \n \n"
 
 cd $share ;
-rm -rf $share/Defold-x86_64-linux.tar.gz && wget https://github.com/Defold/defold/releases/download/1.9.6/Defold-x86_64-linux.tar.gz || if [ -a ]; then echo "$ERROR maybe wget just didn't installed" ; exit 1; fi;
+rm -rf $share/Defold-x86_64-linux.tar.gz && wget https://d.defold.com/editor2/channels/editor-alpha/Defold-x86_64-linux.tar.gz || if [ -a ]; then echo "$ERROR maybe wget just didn't installed" ; exit 1; fi;
 rm -rf $share/Defold/
 	
 # EXTRACTing the ARCHIVE, AND ALSO DELETing an USED ARCHIVE
