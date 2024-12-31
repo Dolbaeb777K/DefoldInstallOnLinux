@@ -1,19 +1,17 @@
 #!/bin/bash
 
 # This is script for installation Defold for linux systems.
-# 1. Downloading Defold-x86_64-linux.tar.gz from GitHub Releases.
+# 1. Downloading Defold-x86_64-linux.tar.gz from GitHub Releases (or from official site).
 # 2. Extract the archive to $HOME/.local/share/Defold/
 # 3. Creating a .desktop file in the $HOME/.local/share/applications/
 
 
 # Variables
 share="$HOME/.local/share"	; # - main directory
-who=`whoami` ; # - username
 
 OK="$(tput setaf 2)[OK]$(tput sgr0)"
 ERROR="$(tput setaf 1)[ERROR]$(tput sgr0)"
 WARN="$(tput setaf 5)[WARN]$(tput sgr0)"
-
 
 # MESSAGE AND CHOICE
 	printf "\nHi. This is install script made for installing or not-fully reinstalling the Defold game engine with .desktop file (Shortcut)! \n \n"
