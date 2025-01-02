@@ -38,11 +38,15 @@ if [ -e $share/Defold-x86_64-linux.tar.gz ]; then
 	printf "\n$(tput setaf 3)[[ Extract the archive ]]$(tput sgr0)\n"	&& tar -xvf Defold-x86_64-linux.tar.gz
 	printf "\n$(tput setaf 3)[[ Delete an used archive ]]$(tput sgr0)\n"	&& rm -rf Defold-x86_64-linux.tar.gz
 else
-	echo "$ERROR Archive doesn't exist. Maybe the archive is have removed."
+	echo "$ERROR Archive doesn't exist. Maybe this archive is have removed."
 fi
 
 # CREATING a Defold.desktop FILE IN THE $HOME/.local/share/applications/
 	printf "\n$(tput setaf 3)\n[[ Creating a desktop file ]]$(tput sgr0)\n" 
+
+if [ ! -e $share/applications ]; then
+	mkdir $share/applications;
+fi
 
 rm -rf $share/applications/Defold.desktop
 
