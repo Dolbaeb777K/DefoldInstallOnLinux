@@ -44,9 +44,7 @@ fi
 # CREATING a Defold.desktop FILE IN THE $HOME/.local/share/applications/
 	printf "\n$(tput setaf 3)\n[[ Creating a desktop file ]]$(tput sgr0)\n" 
 
-if [ ! -e $share/applications ]; then
-	mkdir $share/applications;
-fi
+mkdir -p $share/applications
 
 rm -rf $share/applications/Defold.desktop
 
