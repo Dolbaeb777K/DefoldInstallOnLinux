@@ -8,6 +8,7 @@
 
 # Variables
 share="$HOME/.local/share"	; # - main directory
+desktop="defold-editor.desktop"	; # - The Name of .desktop File
 
 OK="$(tput setaf 2)[OK]$(tput sgr0)"
 ERROR="$(tput setaf 1)[ERROR]$(tput sgr0)"
@@ -35,7 +36,7 @@ rm -rf $share/Defold/
 	
 # EXTRACTing the ARCHIVE, AND ALSO DELETing an USED ARCHIVE
 if [ -e $share/Defold-x86_64-linux.tar.gz ]; then	
-	printf "\n$(tput setaf 3)[[ Extract the archive ]]$(tput sgr0)\n"	&& tar -xvf Defold-x86_64-linux.tar.gz
+	printf "\n$(tput setaf 3)[[ Extract the archive ]]$(tput sgr0)\n\n"	&& tar -xvf Defold-x86_64-linux.tar.gz
 	printf "\n$(tput setaf 3)[[ Delete an used archive ]]$(tput sgr0)\n"	&& rm -rf Defold-x86_64-linux.tar.gz
 else
 	echo "$ERROR Archive doesn't exist. Maybe this archive is have removed."
@@ -46,7 +47,7 @@ fi
 
 mkdir -p $share/applications
 
-rm -rf $share/applications/Defold.desktop
+rm -rf $share/applications/$desktop
 
 echo "[Desktop Entry]
 Name=Defold
@@ -58,11 +59,11 @@ StartupNotify=true
 Exec=env "$share/Defold/Defold"
 Path=$share/Defold/
 Icon=$share/Defold/logo_blue.png
-Categories=Development; " >> $share/applications/Defold.desktop ;
+Categories=Development; " >> $share/applications/$desktop ;
 
 
 # MAKE A FILE EXECUTABLE:
-chmod +x $share/applications/Defold.desktop ;
+chmod +x $share/applications/$desktop ;
 
 
 	printf "\n$(tput setaf 2)[[ Done ]]$(tput sgr0)\n"
