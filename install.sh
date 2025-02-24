@@ -49,10 +49,13 @@ mkdir -p $share/applications
 rm -rf $share/applications/Defold.desktop
 
 echo "[Desktop Entry]
+Name=Defold
+Comment=An out of the box, turn-key solution for multi-platform game development
 Type=Application
 Terminal=false
+StartupWMClass=com.defold.editor.Start
+StartupNotify=true
 Exec=env "$share/Defold/Defold"
-Name=Defold
 Path=$share/Defold/
 Icon=$share/Defold/logo_blue.png
 Categories=Development; " >> $share/applications/Defold.desktop ;
